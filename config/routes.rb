@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   get "/contact" => "site#contact"
 
   get "/baseball" => "baseball#description"
+
+
   get '/projects' => "projects#index"
+  get '/projects/:id' => "projects#show"
 
 end
