@@ -1,0 +1,14 @@
+<ul>
+	<% @projects.each do | project |  %>
+	  <%# if project.name == "Ironhack" %>
+		<li>
+			<%= project.name %>
+			<% if project.description != nil  %>
+				<!-- "WE HAVE A DESCRIPTION" -->
+				--
+				<%= project.description  %>
+			<% end %>
+		</li>
+	  <%# end %>
+	<% end %>
+</ul>
