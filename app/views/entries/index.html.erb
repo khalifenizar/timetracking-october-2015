@@ -1,0 +1,16 @@
+<h1>Timetracking tool</h1>
+
+<h2>Project Entries</h2>
+
+<h3>
+  <%= @proj.name %>
+</h3>
+
+<ul>
+  <% @entries.each do |entr| %>
+    <li>
+      <%= entr.hours %> hours
+      <%= entr.minutes %> minutes
+    </li>
+  <% end %>
+</ul>
