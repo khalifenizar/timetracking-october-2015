@@ -15,12 +15,17 @@ new_projects = [
   Project.new(name: "Building.co", description: "Events with Building.co."),
 ]
 
-new_projects.each do |proj|
+new_projects.each_with_index do |proj, i|
   # Check if project already exists
   if Project.find_by(name: proj.name) == nil
     # If it doesn't exist (nil), save it
     puts "Creating Project: #{proj.name}"
     proj.save
+
+    proj.entries.create(hours: i + 1, minutes: i + 30)
+    proj.entries.create(hours: i + 5, minutes: i + 17)
+    proj.entries.create(hours: i + 3, minutes: i + 23)
+    proj.entries.create(hours: i + 10, minutes: i + 37)
   end
 end
 
