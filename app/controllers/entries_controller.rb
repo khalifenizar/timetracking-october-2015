@@ -1,6 +1,6 @@
 class EntriesController < ApplicationController
   def index
-    my_id = params[:id]
+    my_id = params[:project_id]
 
     @proj = Project.find_by(id: my_id)
 

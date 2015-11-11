@@ -17,5 +17,5 @@ Rails.application.routes.draw do
   get "/project/new" => "projects#new"
   post "/projects" => "projects#create"
 
-  get "/projects/:id/entries" => "entries#index"
+  get "/projects/:project_id/entries" => "entries#index"
 end
