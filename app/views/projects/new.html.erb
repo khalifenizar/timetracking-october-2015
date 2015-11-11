@@ -1,0 +1,16 @@
+<h1>Add a new contact</h1>
+
+<form action="/projects" method="POST">
+  <div>
+    <label for="project_name">Project Name</label>
+    <input type="text" name="project[name]" id="project_name">
+  </div>
+
+  <div>
+    <label for="project_description">Project Description</label>
+    <textarea name="project[description]" id="project_address"></textarea>
+  </div>
+  <input type="hidden" name="authenticity_token"
+      value="<%= form_authenticity_token %>">
+  <button type='submit'>Submit</button>
+</form>
