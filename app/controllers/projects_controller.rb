@@ -7,9 +7,9 @@ class ProjectsController < ApplicationController
 
   # get '/projects/:id' => "projects#show"
   def show
-    id = params[:id]
+    my_id = params[:id]
 
-    @proj = Project.find_by(id: id)
+    @proj = Project.find_by(id: my_id)
 
     if @proj == nil
       redirect_to("/404")
