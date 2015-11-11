@@ -1,0 +1,30 @@
+<!-- new.html.erb -->
+
+<h1>Timetracking</h1>
+
+<h2>Add new time entry</h2>
+
+<h3>
+  <%= @proj.name %>
+</h3>
+
+<%= form_for [ @proj, @entr ] do |f| %>
+  <div>
+    <%= f.label :hours %>
+    <%= f.text_field :hours %>
+  </div>
+
+  <div>
+    <%= f.label :minutes %>
+    <%= f.text_field :minutes %>
+  </div>
+
+  <div>
+    <%= f.label :date %>
+    <%= f.date_field :date %>
+  </div>
+
+  <button type="submit">
+    Add time entry
+  </button>
+<% end %>

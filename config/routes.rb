@@ -11,11 +11,7 @@ Rails.application.routes.draw do
 
   get "/baseball" => "baseball#description"
 
-
-  get "/projects" => "projects#index"
-  get "/projects/:id" => "projects#show"
-  get "/project/new" => "projects#new"
-  post "/projects" => "projects#create"
-
-  get "/projects/:project_id/entries" => "entries#index"
+  resources :projects do
+    resources :entries
+  end
 end

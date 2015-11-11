@@ -12,4 +12,13 @@ class EntriesController < ApplicationController
       render("index")
     end
   end
+
+  def new
+    my_id = params[:project_id]
+
+    @proj = Project.find_by(id: my_id)
+    @entr = @proj.entries.new
+
+    render("new")
+  end
 end
