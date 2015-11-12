@@ -21,3 +21,17 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    attributes:
+      entry:
+        hours: "Hours, yo."
+        minutes: "Minutes, buddy."
+        date: "WHAT DAY DID THIS HAPPEN?"
+    errors:
+      models:
+        entry:
+          attributes:
+            hours:
+              blank: "hours can't be empty fool"
+              not_a_number: "that is not number, dummy"
+
