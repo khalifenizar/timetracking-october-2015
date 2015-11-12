@@ -21,4 +21,22 @@ class EntriesController < ApplicationController
 
     render("new")
   end
+  
+  def create
+    my_id = params[:project_id]
+    @proj = Project.find_by(id: my_id)
+    @entr = @proj.entries.new(entry_params)
+    if @entr.save
+      # redirect_to action: "index", controller: "entries", project_id: @proj.id
+      redirect_to("/projects/#{@proj.id}/entries")
+    else
+      render('new')
+    end
+  end
+
+  private
+
+  def entry_params
+    params.require(:entry).permit(:hours, :minutes, :date)
+  end
 end

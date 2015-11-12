@@ -8,6 +8,17 @@
   <%= @proj.name %>
 </h3>
 
+
+<% if @entr.errors.any? %>
+  <ul>
+    <% @entr.errors.full_messages.each do | error | %>
+      <li>
+        <%= error  %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_for [ @proj, @entr ] do |f| %>
   <div>
     <%= f.label :hours %>
