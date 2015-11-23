@@ -1,0 +1,42 @@
+<!--  _forms.html.erb             -->
+<!--  ^                           -->
+<!--  |____ notice the underscore -->
+
+<%= form_for [ @proj, @entr ] do |f| %>
+  <div>
+    <%= f.label :hours %>
+    <ul>
+      <% @entr.errors[:hours].each do |err| %>
+        <li><%= err %></li>
+      <% end %>
+    </ul>
+
+    <%= f.text_field :hours %>
+  </div>
+
+  <div>
+    <%= f.label :minutes %>
+    <ul>
+      <% @entr.errors[:minutes].each do |err| %>
+        <li><%= err %></li>
+      <% end %>
+    </ul>
+
+    <%= f.text_field :minutes %>
+  </div>
+
+  <div>
+    <%= f.label :date %>
+    <ul>
+      <% @entr.errors[:date].each do |err| %>
+        <li><%= err %></li>
+      <% end %>
+    </ul>
+
+    <%= f.date_field :date %>
+  </div>
+
+  <button type="submit">
+    Save
+  </button>
+<% end %>
