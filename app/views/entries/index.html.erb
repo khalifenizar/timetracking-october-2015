@@ -11,6 +11,9 @@
     <li>
       <%= entr.hours %> hours
       <%= entr.minutes %> minutes
+      <a href="/projects/<%= @proj.id %>/entries/<%= entr.id %>/edit">
+        Edit this time entry
+      </a>
     </li>
   <% end %>
 </ul>
