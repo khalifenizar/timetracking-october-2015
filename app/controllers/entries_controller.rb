@@ -71,9 +71,23 @@ class EntriesController < ApplicationController
         if @entr.update(entry_params)
           redirect_to("/projects/#{@proj.id}/entries")
         else
+
           render "edit"
         end
       end
+    end
+  end
+
+  def destroy
+    @entry = Entry.find_by(id: params[:id])
+
+    if @entry == nil
+      redirect_to("/404")
+    else
+      @entry.destroy
+
+      my_project_id = params[:project_id]
+      redirect_to("/projects/#{my_project_id}/entries")
     end
   end
 

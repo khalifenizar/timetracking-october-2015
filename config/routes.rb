@@ -19,6 +19,8 @@ Rails.application.routes.draw do
 
   # get "/projects/:id/edit" => "projects#edit"
 
+  # delete "/projects/:project_id/entries/:id" => "entries#destroy"
+
   resources :projects do
     resources :entries
   end

@@ -11,9 +11,20 @@
     <li>
       <%= entr.hours %> hours
       <%= entr.minutes %> minutes
-      <a href="/projects/<%= @proj.id %>/entries/<%= entr.id %>/edit">
-        Edit this time entry
-      </a>
+      <ul>
+        <li>
+          <a href="/projects/<%= @proj.id %>/entries/<%= entr.id %>/edit">
+            Edit
+          </a>
+        </li>
+        <li>
+          <a href="/projects/<%= @proj.id %>/entries/<%= entr.id %>"
+              data-method="delete"
+              data-confirm="Are you sure you want to delete this?">
+            Delete
+          </a>
+        </li>
+      </ul>
     </li>
   <% end %>
 </ul>
