@@ -13,9 +13,11 @@ Rails.application.routes.draw do
 
   # /projects/1/entries/7/edit
   # /projects/50/entries/35/edit
-  get "/projects/:project_id/entries/:id/edit" => "entries#edit"
-  put "/projects/:project_id/entries/:id" => "entries#update"
-  patch "/projects/:project_id/entries/:id" => "entries#update"
+  # get "/projects/:project_id/entries/:id/edit" => "entries#edit"
+  # put "/projects/:project_id/entries/:id" => "entries#update"
+  # patch "/projects/:project_id/entries/:id" => "entries#update"
+
+  # get "/projects/:id/edit" => "projects#edit"
 
   resources :projects do
     resources :entries

@@ -30,10 +30,35 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def edit
+    project_find
+
+    if @project == nil
+      redirect_to("/404")
+    else
+      render('edit')
+    end
+  end
+
+  def update
+    project_find
+
+    if @project.update(project_params)
+      redirect_to("/projects/#{@project.id}")
+    else
+      render("edit")
+    end
+  end
+
+
   private
 
   def project_params
     params.require(:project).permit(:name, :description)
+  end
+
+  def project_find
+    @project = Project.find_by(id: params[:id])
   end
 
 end
