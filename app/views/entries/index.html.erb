@@ -1,3 +1,5 @@
+<!-- index.html.erb
+  in: app/views/entries/ -->
 <h1>Timetracking tool</h1>
 
 <h2>Project Entries</h2>
@@ -5,6 +7,12 @@
 <h3>
   <%= @proj.name %>
 </h3>
+
+<% if flash[:notice].present? %>
+  <div class="notice">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
 
 <ul>
   <% @entries.each do |entr| %>
